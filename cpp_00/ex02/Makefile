@@ -6,20 +6,17 @@
 #    By: youngpar <youngseo321@gmail.com>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/28 00:03:10 by youngpar          #+#    #+#              #
-#    Updated: 2022/05/28 17:17:40 by youngpar         ###   ########.fr        #
+#    Updated: 2022/06/03 20:12:17 by youngpar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= phonebook
+NAME		= tester
 
 CXX			= c++
 CXXFLAGS	= -std=c++98 -Wall -Wextra -Werror
-INC			= ./inc
-SRCDIR		= ./srcs
-FILE		= PhoneBook.cpp \
-			  Contact.cpp \
-			  main.cpp
-SRCS		= $(addprefix $(SRCDIR)/, $(FILE))
+INC			= .
+SRCS		= tests.cpp \
+				Account.cpp
 OBJS		= $(SRCS:.cpp=.o)
 
 all		: $(NAME)
