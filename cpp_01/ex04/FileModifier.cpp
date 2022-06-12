@@ -2,12 +2,12 @@
 
 FileModifier::FileModifier(std::string& i_name, std::string& src, std::string& dest) : i_name(i_name), src(src), dest(dest) {
 	this->o_name = i_name + ".replace";
-	this->ifs.open(this->i_name);
+	this->ifs.open(this->i_name.c_str());
 	if (this->ifs.fail()) {
 		std::cerr << "Error : File Read/Open Error" << std::endl;
 		std::exit(1);
 	}
-	else this->ofs.open(this->o_name);
+	else this->ofs.open(this->o_name.c_str());
 	if (this->ofs.fail()) {
 		std::cerr << "Error : File Write Error" << std::endl;
 		std::exit(1);

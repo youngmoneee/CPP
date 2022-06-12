@@ -1,29 +1,29 @@
 #include "Harl.hpp"
 
-using std::endl; using std::cout; using std::string;
+using std::endl; using std::cout;
 
 Harl::Harl() {}
 Harl::~Harl() {}
 
 void Harl::complain(std::string level) {
 	void (Harl::*mfunc[5])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error, &Harl::nomatch};
-	string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
 	int idx = 0;
 	while (idx < 4 && level != levels[idx]) idx++;
 
 	switch(idx) {
-		case 4 :
-			(this->*mfunc[idx++])();
-			break ;
 		case 0:
-			(this->*mfunc[idx++])();
-		case 1 :
-			(this->*mfunc[idx++])();
-		case 2 :
-			(this->*mfunc[idx++])();
-		case 3 :
-			(this->*mfunc[idx++])();
+			(this->*mfunc[0])();
+		case 1:
+			(this->*mfunc[1])();
+		case 2:
+			(this->*mfunc[2])();
+		case 3:
+			(this->*mfunc[3])();
+			break ;
+		default:
+			(this->*mfunc[4])();
 	}
 }
 
