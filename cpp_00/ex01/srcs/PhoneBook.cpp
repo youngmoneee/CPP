@@ -4,7 +4,7 @@ PhoneBook::PhoneBook() {
 	sz = 0;
 	idx = 0;
 }
-PhoneBook::~PhoneBook(){};
+PhoneBook::~PhoneBook(){}
 
 void	PhoneBook::add() {
 	std::string	first_name,
