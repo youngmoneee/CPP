@@ -1,8 +1,21 @@
-//
-// Created by youngmon on 2022/06/15.
-//
+#ifndef FIXED_HPP
+#define FIXED_HPP
 
-#ifndef CPP_FIXED_HPP
-#define CPP_FIXED_HPP
+#include <iostream>
 
-#endif //CPP_FIXED_HPP
+class Fixed {
+private:
+	int bits;
+	static const int fraction = { 8 };
+public:
+	Fixed();
+	Fixed(const Fixed& ref);
+
+	~Fixed();
+
+	Fixed& operator= (const Fixed& ref);
+	int getRawBits( void ) const ;
+	void setRawBits( int const bits);
+};
+
+#endif

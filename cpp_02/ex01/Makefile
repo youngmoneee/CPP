@@ -1,4 +1,4 @@
-NAME		= First
+NAME		= First++
 CXX			= c++
 CXXFLAGS	= -std=c++98 -Wall -Wextra -Werror
 
