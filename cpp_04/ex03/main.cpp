@@ -1,20 +1,26 @@
-#include "DiamondTrap.hpp"
+#include "Animal.hpp"
+#include "Cat.hpp"
+#include "Dog.hpp"
 
 int main() {
-
 	{
-		DiamondTrap youngpar("youngpar");
+		//Animal* a = new Animal;
+		Animal* b = new Dog;
+		Animal* c = new Cat;
 
-		youngpar.attack("zz");
-		youngpar.guardGate();
-		youngpar.highFivesGuys();
-		youngpar.takeDamage(12);
-		youngpar.beRepaired(34);
+		Dog* i = (Dog*) b;
+		Cat* j = (Cat*) c;
 
-		DiamondTrap youngpar2(youngpar);
+		b->makeSound();
+		c->makeSound();
 
-		youngpar.whoAmI();
-		youngpar2.whoAmI();
+		i->makeSound();
+		j->makeSound();
+
+		//delete a;
+		delete b;
+		delete c;
 	}
+
 	return 0;
 }

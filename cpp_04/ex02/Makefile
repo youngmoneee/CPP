@@ -1,11 +1,12 @@
-NAME		= Repetitive
+NAME		= Abstract
 CXX			= c++
 CXXFLAGS	= -std=c++98 -Wall -Wextra -Werror
 
 SRCS		= main.cpp \
-			  ClapTrap.cpp \
-			  ScavTrap.cpp \
-			  FragTrap.cpp
+			  Animal.cpp \
+			  Dog.cpp \
+			  Cat.cpp \
+			  Brain.cpp
 OBJS		= $(SRCS:.cpp=.o)
 
 all		: $(NAME)

@@ -6,10 +6,11 @@ using std::cout; using std::endl;
 
 int main() {
 	{
-		const Dog* i = new Dog;
-		const Animal* j = new Cat;
+		const Animal* a = new Dog;
+		const Animal* b = new Cat;
 
-
+		const Dog* i = (Dog*)a;
+		const Cat* j = (Cat*)b;
 		i->getBrain()[0] = "qweqwe";
 		cout << (i->getBrain())[0] << endl;
 		try
@@ -19,7 +20,7 @@ int main() {
 			cout << aa.what() << endl;
 		}
 
-		delete i;
+		delete a;
 		delete j;
 	}
 

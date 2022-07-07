@@ -1,24 +1,26 @@
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#include "Animal.hpp"
+#include "Cat.hpp"
+#include "Dog.hpp"
 
 int main() {
-
 	{
-		ScavTrap young("ST");
-		FragTrap par("FT");
+		//Animal* a = new Animal;
+		Animal* b = new Dog;
+		Animal* c = new Cat;
 
-		young.attack("Anyone");
-		par.takeDamage(50);
-		par.takeDamage(2);
-		par.beRepaired(2);
-		young.takeDamage(50);
-		par.attack("asd");
-		par.attack("asd");
-		par.attack("asd");
-		par.attack("asd");
-		young.guardGate();
-		par.highFivesGuys();
+		Dog* i = (Dog*) b;
+		Cat* j = (Cat*) c;
+
+		b->makeSound();
+		c->makeSound();
+
+		i->makeSound();
+		j->makeSound();
+
+		//delete a;
+		delete b;
+		delete c;
 	}
+
 	return 0;
 }
