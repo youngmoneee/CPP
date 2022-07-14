@@ -28,3 +28,8 @@ Point::getX(void) const { return this->x; }
 
 Fixed
 Point::getY(void) const { return this->y; }
+
+std::ostream& operator<<(std::ostream& os, const Point& p) {
+	os << p.getX() << " " << p.getY();
+	return os;
+}

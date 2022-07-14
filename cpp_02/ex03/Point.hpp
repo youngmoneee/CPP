@@ -21,6 +21,6 @@ public:
 	Fixed area(Point const other, Point const another) const ;
 };
 
-std::ostream& operator<<(std::ostream& os, const Point ref);
+std::ostream& operator<<(std::ostream& os, const Point& ref);
 bool bsp(Point const a, Point const b, Point const c, Point const point);
 #endif
