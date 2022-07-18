@@ -29,14 +29,6 @@ public:
 	public:
 		const char* what() const throw() ;
 	};
-	class NotANumberException : public exception {
-	public:
-		const char* what() const throw() ;
-	};
-	class NotACharException : public exception {
-	public:
-		const char* what() const throw() ;
-	};
 	class NotPrintableException : public exception {
 	public:
 		const char* what() const throw() ;

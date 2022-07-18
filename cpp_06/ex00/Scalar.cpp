@@ -20,7 +20,7 @@ ostream& Scalar::pChar(ostream& os) {
 
 	os << "char : ";
 	try {
-		num = stoi(this->value);
+		num = std::stoi(this->value);
 		if (num < CHAR_MIN || num > CHAR_MAX)
 			throw ImposibleException();
 		if (!isprint(num))
@@ -53,7 +53,7 @@ ostream& Scalar::pFloat(ostream& os) {
 	os << "float : ";
 	try {
 		flt = std::stof(this->value);
-		if (std::isnan(flt) || std::isinf(flt))
+		if (isnan(flt) || isinf(flt))
 			os << std::showpos;
 		os << std::setprecision(std::numeric_limits<float>::digits10) << flt;
 		if (flt == static_cast<int>(flt))
@@ -69,10 +69,10 @@ ostream& Scalar::pFloat(ostream& os) {
 ostream& Scalar::pDouble(ostream& os) {
 	double dbl;
 
-	os << "Double : ";
+	os << "double : ";
 	try {
 		dbl = std::stod(this->value);
-		if (std::isnan(dbl) || std::isinf(dbl))
+		if (isnan(dbl) || isinf(dbl))
 			os << std::showpos;
 		os << std::setprecision(std::numeric_limits<double>::digits10) << dbl;
 		if (dbl == static_cast<int>(dbl))
@@ -86,10 +86,6 @@ ostream& Scalar::pDouble(ostream& os) {
 
 const char* Scalar::ImposibleException::what() const throw() {
 	return "imposible";
-}
-
-const char* Scalar::NotANumberException::what() const throw() {
-	return "nan";
 }
 
 const char* Scalar::NotPrintableException::what() const throw() {
