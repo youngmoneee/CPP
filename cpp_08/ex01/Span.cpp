@@ -42,8 +42,7 @@ uint Span::shortestSpan() {
 
 uint Span::longestSpan() {
 	if (this->size() < 2) throw Span::FewException();
-	std::sort(lst.begin(), lst.end());
-	return this->lst.back() - this->lst[0];
+	return *std::max_element(this->lst.begin(), this->lst.end()) - *std::min_element(this->lst.begin(), this->lst.end());
 }
 
 const char* Span::FullException::what() const throw() {

@@ -20,6 +20,11 @@ public:
 	Span& operator=(const Span& ref);
 
 	void addNumber(int n);
+	template <typename Iter>
+	void addNumber(Iter begin, Iter end) {
+		for (; begin != end; begin++)
+			this->addNumber(*begin);
+	}
 	void addNumber(const Span& ref);
 	Span& operator+=(int n);
 	uint shortestSpan();
